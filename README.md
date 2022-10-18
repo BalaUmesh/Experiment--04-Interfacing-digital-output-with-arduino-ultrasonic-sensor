@@ -55,8 +55,32 @@ speed of sound in the air at 20ºC (68ºF) = 343m/s
 
 
 ### PROGRAM 
+REG.NO: 212221040024
 
+NAME : BALAUMESH S
 
+```
+#define echoPin 9
+#define trigPin 10
+long duration;
+int distance;
+void setup(){
+  pinMode(trigPin, OUTPUT);
+  pinMode(echoPin, INPUT);
+  Serial.begin(9600);
+}
+void loop(){
+  digitalWrite(trigPin, HIGH);
+  delayMicroseconds(2);
+  digitalWrite(trigPin, LOW);
+  duration = pulseIn(echoPin, HIGH);
+  distance = duration * 0.034/2;
+  Serial.print("Distance: ");
+  Serial.print(distance);
+  Serial.println(" cm");
+}
+
+```
 
 
 
@@ -65,19 +89,37 @@ speed of sound in the air at 20ºC (68ºF) = 343m/s
 
 			
  
-			
+![Screenshot ex 4 1](https://user-images.githubusercontent.com/113031742/196423388-b38a6c20-98cd-4e57-9e72-6209f6e78b50.png)
+		
 			
 			
 
-![image](https://user-images.githubusercontent.com/36288975/190135379-52ebacd5-ccd5-460f-a4cd-4d0ad1d9b179.png)
+
 
 			
 			
 			
 			
 			
-			Average error = sum/ number of readings 
+```
+	Average error = sum/ number of readings 
+
+
+
+          = 0.5+0.7+0.4+0.8+1.0
+      = 3.4/5
+  =0.68
+```
  
+### OUTPUT:
+
+![Screenshot ex4 2](https://user-images.githubusercontent.com/113031742/196423513-07223ae2-8914-474d-9199-a69f922b3678.png)
+
+
+### SERIAL MONITOR:
+
+
+![Screenshot ex 4  3](https://user-images.githubusercontent.com/113031742/196423655-4325b52e-4687-42ba-bc3c-761e16e4070a.png)
 
 
 
@@ -88,6 +130,6 @@ speed of sound in the air at 20ºC (68ºF) = 343m/s
 
 ### RESULTS
 
-
+Thus the distance value is measured in "CM" using ultrasonic sensor.
 
  
